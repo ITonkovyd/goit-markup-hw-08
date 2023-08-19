@@ -1,0 +1,72 @@
+/* Section advantages */
+
+.advantages {
+  padding: 94px 0px;
+
+  @media screen and (max-width: 1199px) {
+    padding: 60px 0px;
+  }
+
+  &__list {
+    @media screen and (max-width: 1199px) {
+      letter-spacing: 0;
+    }  
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
+    }
+  }
+  
+  &__title {
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
+
+  }
+
+  &__discription {
+    line-height: 1.71;
+  }
+}
+
+.advantages__icon:nth-child(-n + 3) {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+}
+
+.advantages__icon{
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 60px) / 2);
+    margin: 15px;
+  }
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 120px) / 4);
+    margin: 15px;
+  }
+  
+  &::before {
+    display: block;
+    background-color: var(--secondary-background-color);
+    content: "";
+    height: 120px;
+    margin-bottom: 30px;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@each $item in antenna, clock, diagram, astronaut {
+  .advantages__icon.advantages__icon--#{$item}::before {
+    background-image: url('../images/#{$item}.svg');
+  }
+}

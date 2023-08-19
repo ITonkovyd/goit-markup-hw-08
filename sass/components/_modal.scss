@@ -1,0 +1,221 @@
+/* Modal */
+
+.backdrop {
+  position: fixed;
+  
+    top: 0;
+    left: 0;
+  
+    width: 100%;
+    height: 100%;
+  
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 250ms var(--cubic);
+  
+    overflow-y: scroll;
+  
+    @media screen and(max-width:767px) {
+      padding: 93px 15px 0 15px;
+    }
+}
+
+.modal-form {
+  position: relative;
+  padding: 40px;
+    min-height: 601px;
+    border-radius: 4px;
+    background-color: var(--primary-white-color);
+    transition: transform 250ms var(--cubic);
+  
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+  
+    @media screen and (max-width: 767px) {
+      max-width: 450px;
+    }
+  
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 450px;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  
+    @media screen and (min-width: 1200px) {
+      width: 528px;
+      min-height: 581px;
+    }
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 6px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: box-shadow 250ms var(--cubic), fill 250ms var(--cubic), 
+    border-color 250ms var(--cubic);
+
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.title-form {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+  margin-bottom: 12px;
+}
+
+.form-indent {
+  margin-bottom: 30px;
+}
+
+.form-label {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
+.form-box {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2) ;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 42px;
+  transition: border-color 250ms var(--cubic);
+  
+  &:hover,
+  &:focus{
+    border-color: var(--accent-color) ;
+  }
+
+    &:hover~.form-icon ,
+    &:focus~.form-icon {
+      fill: var(--accent-color);
+    }
+}
+
+.form-icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--title-text-color);
+  transition: fill 250ms var(--cubic);
+}
+
+.input-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  height: 120px;
+  outline: none;
+  transition: border-color 250ms var(--cubic);
+  margin-bottom: 20px;
+  
+  &:hover,
+  &:focus {
+    border-color: var(--accent-color);
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.form-agree {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: 1.17;
+  }
+}
+
+.form-link {
+  color: var(--accent-color)
+}
+
+.checkbox-box {
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  margin-right: 7px;
+  @media screen and (max-width: 425px) {
+    width: 20px;
+  }
+  
+  .checkbox:checked + & {
+    border: none;
+    background-color: var(--accent-color);
+    background-image: url(../images/vector.svg);
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-position: center;
+    border-color: transparent;
+    transition: background-image 250ms var(--cubic),
+    background-color 250ms var(--cubic), border 250ms var(--cubic);
+  }
+}
+
+.form-button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 55px;
+  cursor: pointer;
+  border: none;
+  margin: auto;
+  display: block;
+  margin-top: 31px;
+}
